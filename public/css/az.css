@@ -1,0 +1,221 @@
+body
+{
+	font-family: Candara, Segoe UI, sans-serif;
+	background-color: rgb(200, 186, 169);
+	/* background-image: linear-gradient(lightskyblue, gainsboro 50%, olive 80%); */
+	background-attachment: fixed;
+	margin: 0px;
+	line-height: 1.2;
+	font-size: 1rem;
+}
+
+ul
+{
+	list-style: none;
+	padding: 0;
+}
+
+ul li
+{
+	padding: 2px 12px;
+
+}
+
+ul li:not(:last-child)
+{
+	border-bottom: 1px solid black;
+}
+
+a.button
+{
+	display: flex;
+	text-decoration: none;
+	color: white;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 3px;
+	margin: 2px;
+	background-image: linear-gradient(to bottom, #947a62 0%,#7b5c3d 22%,#6c4824 30%,#6c4824 100%);
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+a.button:hover
+{
+	background-image: linear-gradient(to bottom, #a48a72 0%,#8b6c4d 22%,#7c5834 30%,#7c5834 100%);
+}
+
+nav.navbar
+{
+	/* background-color: #6e5a46; */
+	background-image: linear-gradient(#6e5a46 80%, #47251C);
+	color: white;
+	padding: 0.5rem;
+	border-bottom: 8px solid;
+	border-image: linear-gradient(#8a5534, sienna, #51301c) 50;
+
+}
+
+footer
+{
+	/* background-image: linear-gradient(#47251C, #6e5a46 80%); */
+	background-color: #6e5a46;
+	color: white;
+	padding: 0.5rem;
+	border-top: 8px solid;
+	border-image: linear-gradient(to top, #8a5534, sienna, #51301c) 50;
+	border-bottom: 1px solid sienna;
+	background-image: linear-gradient(to top, #6e5a46 80%, #47251C);
+}
+
+hr
+{
+	border: 1px solid black;
+}
+
+.container
+{
+  display: grid;
+  grid-template-rows: minmax(220px, 1fr);
+  grid-template-columns: 2fr 5fr 2fr;
+  grid-gap: 8px;
+  margin: 0px auto;
+  padding: 8px;
+  max-width: 1800px;
+}
+
+@media only screen and (max-width: 768px)
+{
+  .container
+  {
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 768px));
+  }
+}
+
+.col-1, .col-2, .col-3
+{
+	background-color: #6e5a46;
+	padding: 0.2rem 0.3rem;
+	color: white;
+	border: 3px ridge sienna;
+}
+
+.navbar form
+{
+    display: inline;
+}
+
+.navbar a, .navbar button
+{
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	border: 1px solid black;
+	padding: 0.25rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+	background-color: rgba(0, 0, 0, 0.1);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.5));
+}
+
+.navbar a:hover, .navbar button:hover
+{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.7));
+	color: gainsboro;
+}
+
+.courier-new
+{
+	font-family: Courier New, Lucida Console;
+}
+
+.background-pattern {
+  --s: 110px; /* control the size */
+  --c1: #6b5743; /* pattern */
+  --c2: #6e5a46;
+
+  --_g:radial-gradient(#0000 60%,var(--c1) 61% 63%,#0000 64% 77%,var(--c1) 78% 80%,#0000 81%);
+  --_c:,#0000 75%,var(--c2) 0;
+  background:
+    conic-gradient(at 12% 20% var(--_c)) calc(var(--s)* .44) calc(.9*var(--s)),
+    conic-gradient(at 12% 20% var(--_c)) calc(var(--s)*-.06) calc(.4*var(--s)),
+    conic-gradient(at 20% 12% var(--_c)) calc(.9*var(--s)) calc(var(--s)* .44),
+    conic-gradient(at 20% 12% var(--_c)) calc(.4*var(--s)) calc(var(--s)*-.06),
+    var(--_g),var(--_g) calc(var(--s)/2) calc(var(--s)/2) var(--c2);
+  background-size: var(--s) var(--s);
+}
+
+.main-view
+{
+	position: relative;
+	background-image: url("../img/village1.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 220px;
+
+}
+
+.village-name
+{
+	background: rgba(0, 0, 0, 0.6);
+	padding: 0.25rem 0.5rem;
+	font-weight: 600;
+}
+
+.village-info
+{
+	position: absolute;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 0.25rem 0.5rem;
+	width: 50%;
+	height: 85px;
+	bottom: 0px;
+	right: 0px;
+}
+
+.section-title
+{
+	background: rgba(0, 0, 0, 0.6);
+	padding: 0.25rem 0.5rem;
+	font-weight: 600;
+}
+
+.center
+{
+	margin: 100px auto;
+	width: 50%;
+	border: 3px solid sienna;
+	padding: 10px;
+}
+
+.main-panel
+{
+	display: flex;
+	justify-content: flex-start;
+	gap: 8px;
+}
+
+.main-panel .action-button
+{
+	position: relative;
+	border: 1px solid black;
+	width: 80px;
+	height: 80px;
+	background-size: cover;
+	background-image: radial-gradient(DimGray, DarkSlateGray);
+	font-size: 1.25rem;
+}
+
+.main-panel .action-button .level
+{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 25px;
+	height: 25px;
+	text-align: center;
+}
