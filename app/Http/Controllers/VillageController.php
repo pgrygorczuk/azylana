@@ -24,15 +24,19 @@ class VillageController extends Controller
         return view('village.index')
             ->with('village', $village)
             ->with('villages', $villages)
-            ->with('user', $user);
+            ->with('user', $user)
+            ;
     }
 
     public function village(Village $village)
     {
         $user = Auth::user();
         $villages = Village::where('user_id', $user->id)->get();
+        
         return view('village.index')
-            ->with('village', $village);
+            ->with('village', $village)
+            ->with('buildings', $village->buildings)
+            ;
     }
 
     public function test()

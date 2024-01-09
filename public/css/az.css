@@ -158,14 +158,14 @@ hr
 
 }
 
-.village-name
+.item-name
 {
 	background: rgba(0, 0, 0, 0.6);
 	padding: 0.25rem 0.5rem;
 	font-weight: 600;
 }
 
-.village-info
+.item-info
 {
 	position: absolute;
 	background: rgba(0, 0, 0, 0.6);
@@ -174,6 +174,13 @@ hr
 	height: 85px;
 	bottom: 0px;
 	right: 0px;
+}
+
+.item-image > img
+{
+	width: 192px;
+	height: 192px;
+	object-fit: cover;
 }
 
 .section-title

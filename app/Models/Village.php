@@ -2,15 +2,22 @@
 
 namespace App\Models;
 
-use App\Models\VillageBuilding;
+use App\Models\BuildingVillage;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Village extends Model
 {
     use HasFactory;
+
+    public function buildings(): BelongsToMany
+    {
+        return $this->belongsToMany(Building::class)
+                    ->withPivot('level');
+    }
 
     protected function growth(): Attribute
     {
@@ -33,7 +40,7 @@ class Village extends Model
         $village->y = rand(0, 100);
         $village->save();
 
-        $vbuilding = new VillageBuilding();
+        $vbuilding = new BuildingVillage();
         $vbuilding->village_id = $village->id;
         $vbuilding->building_id = 1;
         $vbuilding->level = 1;

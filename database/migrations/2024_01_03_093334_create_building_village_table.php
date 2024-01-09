@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('village_building', function (Blueprint $table) {
+        Schema::create('building_village', function (Blueprint $table) {
             $table->id();
             $table->foreignId('village_id')->references('id')->on('villages')->onDelete('cascade');
             $table->foreignId('building_id')->references('id')->on('buildings')->onDelete('cascade');
             $table->tinyInteger('level')->unsigned()->default(0);
-            $table->timestamp('finished_at');
+            $table->timestamp('finished_at')->useCurrent();
+            $table->timestamps();
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('village_building');
+        Schema::dropIfExists('building_village');
     }
 };
