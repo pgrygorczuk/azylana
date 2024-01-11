@@ -14,6 +14,7 @@ class ActionButton extends Component
         $this->dispatch('item-clicked', [
             'id' => $this->item->id,
             'class' => $this->item::class,
+            'level' => $this->level,
         ]);
     }
 

@@ -46,6 +46,13 @@ a.button:hover
 	background-image: linear-gradient(to bottom, #a48a72 0%,#8b6c4d 22%,#7c5834 30%,#7c5834 100%);
 }
 
+a.button-right
+{
+    float: right;
+    margin: 1rem;
+    width: 50%;
+}
+
 nav.navbar
 {
 	/* background-color: #6e5a46; */
@@ -158,29 +165,39 @@ hr
 
 }
 
-.item-name
+div.item-view-component
 {
-	background: rgba(0, 0, 0, 0.6);
-	padding: 0.25rem 0.5rem;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 10% 90%;
+	grid-template-columns: 30% 70%;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+div.item-name
+{
+	grid-column-start: 1;
+	grid-column-end: 3;
+    padding: 0.25rem 0.5rem;
 	font-weight: 600;
 }
 
-.item-info
+div.item-image
 {
-	position: absolute;
-	background: rgba(0, 0, 0, 0.6);
-	padding: 0.25rem 0.5rem;
-	width: 50%;
-	height: 85px;
-	bottom: 0px;
-	right: 0px;
+	display: flex;
+	align-items: center;
 }
 
-.item-image > img
+div.item-image > img
 {
-	width: 192px;
-	height: 192px;
-	object-fit: cover;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+div.item-info
+{
+
 }
 
 .section-title
@@ -209,11 +226,17 @@ hr
 {
 	position: relative;
 	border: 1px solid black;
-	width: 80px;
-	height: 80px;
+	width: 96px;
+	height: 96px;
 	background-size: cover;
 	background-image: radial-gradient(DimGray, DarkSlateGray);
 	font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.main-panel .action-button:hover
+{
+    filter: brightness(110%);
 }
 
 .main-panel .action-button .level

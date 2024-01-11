@@ -38,12 +38,20 @@ class Village extends Model
         $village->name = "$user->name's village";
         $village->x = rand(0, 100);
         $village->y = rand(0, 100);
+        $village->popularity = 100;
+        $village->population = 1;
         $village->save();
 
         $vbuilding = new BuildingVillage();
         $vbuilding->village_id = $village->id;
-        $vbuilding->building_id = 1;
+        $vbuilding->building_id = 2;
         $vbuilding->level = 1;
+        $vbuilding->save();
+
+        $vbuilding = new BuildingVillage();
+        $vbuilding->village_id = $village->id;
+        $vbuilding->building_id = 1;
+        $vbuilding->level = 0;
         $vbuilding->save();
 
         return $village;
