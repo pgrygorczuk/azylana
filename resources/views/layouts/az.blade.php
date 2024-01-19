@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{asset('css/az.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/az.css') }}">
+        <script src="{{ asset('js/az.js') }}"></script>
 	</head>
 	<body>
 
@@ -19,12 +20,27 @@
 		<div class="container">
 
 			<div class="col-1">
-				<a href="{{ url("/village/$village_id/economy") }}" class="button">
-                    Economy buildings</a>
-                <a href="{{ url("/village/$village_id/military") }}" class="button">
-                    Military buildings</a>
-                <a href="{{ url("/village/$village_id/common") }}" class="button">
-                    Common buildings</a>
+				<a href="#" class="button">
+                    Economy buildings
+                </a>
+                <a href="#" class="button">
+                    Military buildings
+                </a>
+                <a href="#" class="button">
+                    Common buildings
+                </a>
+                <a href="#" class="button">
+                    Technology tree
+                </a>
+                <a href="#" class="button">
+                    Units
+                </a>
+                <a href="#" class="button">
+                    Weapons
+                </a>
+                <a href="#" class="button">
+                    Map
+                </a>
 			</div>
 
 			<div class="col-2">
@@ -38,6 +54,8 @@
 			</div>
 
 			<div class="col-3">
+                <div class="section-title">Resources</div>
+                <x-resources :resource="$village->resource" autoincrement="TRUE"/>
 				<div class="section-title">Villages</div>
 				<ul>
                     @foreach ($villages as $village)
@@ -62,5 +80,8 @@
 			All rights reserved.
 		</footer>
 
+        @stack('az-scripts')
+
 	</body>
 </html>
+

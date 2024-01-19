@@ -1,11 +1,11 @@
 
 ## About
 
-My first Laravel app.
+A simple browser game created to experiment with advanced programming techniques in Laravel.
 
 ## Installation
 
-Create and .env file.
+Create and fill .env file.
 
 cp .env.example .env
 

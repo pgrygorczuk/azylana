@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('image1')->nullable();
             $table->string('description', 511)->nullable();
-            $table->string('seconds')->default(5)->comment('Time required for first level');
-            $table->float('seconds_mul')->default(2.5)->comment('Time multiplier per level');
+            $table->integer('seconds')->default(5)->comment('Time required for first level');
+            $table->float('seconds_mul')->default(1.66)->comment('Time multiplier per level');
             $table->tinyInteger('max_level')->unsigned()->default(100);
             $table->tinyInteger('max_workers')->unsigned()->default(0)->comment('Max number of workers on first level');
             $table->mediumInteger('min_pop')->unsigned()->default(1)->comment('Free population required to start upgrade');

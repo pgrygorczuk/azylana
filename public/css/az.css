@@ -197,7 +197,6 @@ div.item-image > img
 
 div.item-info
 {
-
 }
 
 .section-title
@@ -249,3 +248,26 @@ div.item-info
 	height: 25px;
 	text-align: center;
 }
+
+.action-button .timer
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.action-button img
+{
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 25%;
+}
+
+.resources
+{
+	font-size: 1.0rem;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.resources img{ max-height: 18px; }

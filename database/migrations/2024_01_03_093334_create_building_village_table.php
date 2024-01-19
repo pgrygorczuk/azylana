@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('village_id')->references('id')->on('villages')->onDelete('cascade');
             $table->foreignId('building_id')->references('id')->on('buildings')->onDelete('cascade');
-            $table->tinyInteger('level')->unsigned()->default(0);
+            $table->tinyInteger('level')->default(0);
             $table->timestamp('finished_at')->useCurrent();
             $table->timestamps();
         });

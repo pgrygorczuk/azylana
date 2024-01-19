@@ -1,21 +1,25 @@
 @extends('layouts.az', [
-    'village_id' => $village->id,
+    'village' => $village,
     'villages' => $villages ])
 
+
 @section('main-view')
-    @livewire('main-view', [
-            'item'  => $village,
-        ])
+    @livewire('main-view')
 @endsection
+
 
 @section('main-panel')
 
     @foreach($village->buildings as $building)
         @if($building)
+
             @livewire('action-button', [
-                    'item'  => $building,
-                    'level' => $building->pivot->level,
-                ])
+                'item_id' => $building->id,
+                'item_class' => 'App\Models\Building',
+                'mid_table_id' => $building->pivot->id,
+                'mid_table_class' => 'App\Models\BuildingVillage',
+            ])
+
         @endif
     @endforeach
 

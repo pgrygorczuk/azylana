@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Building;
+use App\Models\BuildingVillage;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VillageController;
 
@@ -30,7 +32,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+    Route::get('/unlock/{buildingvillage}', [VillageController::class, 'unlock']);
+    Route::get('/build/{buildingvillage}/{building}', [VillageController::class, 'build']);
     Route::get('/village/{village:id?}', [VillageController::class, 'index']);
-    Route::get('/test', [VillageController::class, 'test']);
 
 });

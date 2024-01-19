@@ -23,7 +23,8 @@ return new class extends Migration
             $table->float('ore_inc')->unsigned()->default(0);
             $table->float('stone_inc')->unsigned()->default(0);
             $table->float('food_inc')->unsigned()->default(0);
-            $table->string('comment')->nullable();
+            $table->string('type', 1)->nullable();
+            $table->timestamps();
         });
     }
 
